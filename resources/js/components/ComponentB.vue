@@ -1,10 +1,143 @@
 <template>
-    <div class="container px-5">
-        <div></div>
+    <div class="container px-5 pt-5 mb-5">
+        <div class="flex items-center mb-3">
+            <p class="mr-3 text-[#06C0C0]">Cost Detail</p>
+            <i class="fa-solid fa-chevron-down text-[#06C0C0]"></i>
+        </div>
+
+        <table class="w-full border-collapse border border-gray-300">
+            <thead class="bg-gray-200 text-sm">
+                <tr>
+                <th class="py-2 px-3 font-normal text-left w-[16%]">Description</th>
+                <th class="py-2 px-3 font-normal text-left w-[8%]">Qty</th>
+                <th class="py-2 px-3 font-normal text-left w-[9%]">UOM</th>
+                <th class="py-2 px-3 font-normal text-left w-[10%]">Unit Price</th>
+                <th class="py-2 px-3 font-normal text-left">Discount(%)</th>
+                <th class="py-2 px-3 font-normal text-left">VAT(%)</th>
+                <th class="py-2 px-3 font-normal text-left"></th>
+                <th class="py-2 px-3 font-normal text-left w-[9%]">Currency</th>
+                <th class="py-2 px-3 font-normal text-left w-[10%]">VAT Amount</th>
+                <th class="py-2 px-3 font-normal text-left w-[9%]">Sub Total</th>
+                <th class="py-2 px-3 font-normal text-left">Total</th>
+                <th class="py-2 px-3 font-normal text-left w-[18%]">Charge To</th>
+                <th class="py-2 px-3 font-normal text-left"></th>
+                </tr>
+            </thead>
+            <tbody class="text-sm border border-gray-300">
+                <tr class="border border-gray-300">
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Description">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Qty">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option value="SHP" selected>SHP</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Unit Price">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="number" class="w-full px-3 py-3 bg-gray-100 rounded" value="0">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="number" class="w-full px-3 py-3 bg-gray-100 rounded" value="0">
+                </td>
+                <td class="text-center">
+                    <i class="fa-solid fa-right-long text-center text-[#B8C0C6]"></i>
+                </td>
+                <td class="py-3 pr-1 pl-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option value="USD" selected>USD</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option value="" selected disabled>Select an option</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-3">
+                    <button class="h-11 w-11 bg-[#E5E5E5] rounded">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </td>
+                </tr>
+                <tr class="border border-gray-300">
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Description">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Qty">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option value="SHP" selected>SHP</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Unit Price">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="number" class="w-full px-3 py-3 bg-gray-100 rounded" value="0">
+                </td>
+                <td class="py-3 pl-3 pr-1">
+                    <input type="number" class="w-full px-3 py-3 bg-gray-100 rounded" value="0">
+                </td>
+                <td class="text-center">
+                    <i class="fa-solid fa-right-long text-center text-[#B8C0C6]"></i>
+                </td>
+                <td class="py-3 pr-1 pl-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option value="USD" selected>USD</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">0.00</td>
+                <td class="py-3 pl-3 pr-1">
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
+                    <option class="custom-color" value="" selected disabled>Select an option</option>
+                    </select>
+                </td>
+                <td class="py-3 pl-3 pr-3">
+                    <button class="h-11 w-11 bg-[#E5E5E5] rounded">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                </td>
+                </tr>
+                <tr>
+                    <td class="pl-3" colspan="7" rowspan="2">Exchange Rate 1 USD = <input type="number" class="text-right bg-gray-100 w-[85px] py-1 rounded" value="3.675"> AED</td>
+                    <td class="pl-3 bg-[#F5F6F8] font-semibold">AED in Total</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td></td>
+                    <td class="py-3 pl-3 pr-3" rowspan="2">
+                        <button class="h-11 w-11 bg-[#00C0BF] rounded text-white">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pl-3 bg-[#F5F6F8] font-semibold">USD in Total</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
 <script>
+    import '@fortawesome/fontawesome-free/css/all.css'
+    import axios from 'axios';
+
     export default {
         mounted() {
             console.log('Component mounted.')
