@@ -4,7 +4,6 @@
             <p class="mr-3 text-[#06C0C0]">Cost Detail</p>
             <i class="fa-solid fa-chevron-down text-[#06C0C0]"></i>
         </div>
-
         <table class="w-full border-collapse border border-gray-300">
             <thead class="bg-gray-200 text-sm">
                 <tr>
@@ -101,7 +100,7 @@
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">
                     <select class="w-full px-3 py-3 bg-gray-100 rounded">
-                    <option class="custom-color" value="" selected disabled>Select an option</option>
+                    <option class="text-[#C0C6CA]" value="" selected disabled>Select an option</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-3">
@@ -112,10 +111,10 @@
                 </tr>
                 <tr>
                     <td class="pl-3" colspan="7" rowspan="2">Exchange Rate 1 USD = <input type="number" class="text-right bg-gray-100 w-[85px] py-1 rounded" value="3.675"> AED</td>
-                    <td class="pl-3 bg-[#F5F6F8] font-semibold">AED in Total</td>
-                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
-                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
-                    <td class="pl-3 pr-1 bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 border-b-4 border-b-white bg-[#F5F6F8] font-semibold">AED in Total</td>
+                    <td class="pl-3 pr-1 border-b-4 border-b-white  bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 border-b-4 border-b-white  bg-[#F5F6F8] font-semibold">0.00</td>
+                    <td class="pl-3 pr-1 border-b-4 border-b-white  bg-[#F5F6F8] font-semibold">0.00</td>
                     <td></td>
                     <td class="py-3 pl-3 pr-3" rowspan="2">
                         <button class="h-11 w-11 bg-[#00C0BF] rounded text-white">

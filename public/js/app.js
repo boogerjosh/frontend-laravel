@@ -2414,7 +2414,7 @@ var staticRenderFns = [function () {
   }, [_c("select", {
     staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
   }, [_c("option", {
-    staticClass: "custom-color",
+    staticClass: "text-[#C0C6CA]",
     attrs: {
       value: "",
       selected: "",
@@ -2439,13 +2439,13 @@ var staticRenderFns = [function () {
       value: "3.675"
     }
   }), _vm._v(" AED")]), _vm._v(" "), _c("td", {
-    staticClass: "pl-3 bg-[#F5F6F8] font-semibold"
+    staticClass: "pl-3 border-b-4 border-b-white bg-[#F5F6F8] font-semibold"
   }, [_vm._v("AED in Total")]), _vm._v(" "), _c("td", {
-    staticClass: "pl-3 pr-1 bg-[#F5F6F8] font-semibold"
+    staticClass: "pl-3 pr-1 border-b-4 border-b-white bg-[#F5F6F8] font-semibold"
   }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
-    staticClass: "pl-3 pr-1 bg-[#F5F6F8] font-semibold"
+    staticClass: "pl-3 pr-1 border-b-4 border-b-white bg-[#F5F6F8] font-semibold"
   }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
-    staticClass: "pl-3 pr-1 bg-[#F5F6F8] font-semibold"
+    staticClass: "pl-3 pr-1 border-b-4 border-b-white bg-[#F5F6F8] font-semibold"
   }, [_vm._v("0.00")]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td", {
     staticClass: "py-3 pl-3 pr-3",
     attrs: {
