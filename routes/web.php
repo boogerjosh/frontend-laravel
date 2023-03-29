@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UomController;
+use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\ChargeToController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/api/uom', [UomController::class, 'index']);
+Route::get('api/currency', [CurrencyController::class, 'index']);
+Route::get('api/charge-to', [ChargeToController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

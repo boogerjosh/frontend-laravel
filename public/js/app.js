@@ -2113,22 +2113,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store */ "./resources/js/store.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  // computed: {
-  //     ...mapState({
-  //         uomOptions: state => state.uomOptions,
-  //     }),
-  //     selectedUomOption: {
-  //         get() {
-  //             return this.$store.state.selectedUomOption
-  //         },
-  //         set(value) {
-  //             this.$store.commit('setSelectedUomOption', value)
-  //         }
-  //     }
-  // }
+  name: 'ComponentB',
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapGetters)(['uomOptions', 'currencyOptions', 'chargeToOptions'])),
+  mounted: function mounted() {
+    this.$store.dispatch('fetchUomOptions');
+    this.$store.dispatch('fetchCurrencyOptions');
+    this.$store.dispatch('fetchChargeToOptions');
+  }
 });
 
 /***/ }),
@@ -2226,39 +2229,50 @@ var render = function render() {
     staticClass: "border border-gray-300"
   }, [_vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("td", {
     staticClass: "py-3 pl-3 pr-1"
+  }, [_c("select", {
+    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
   }, _vm._l(_vm.uomOptions, function (uom) {
-    return _c("select", {
+    return _c("option", {
       key: uom.id,
-      staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
       domProps: {
         value: uom.id
       }
-    }, [_c("option", [_vm._v(_vm._s(uom.name))])]);
-  }), 0), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8), _vm._v(" "), _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_vm._v("0.00")]), _vm._v(" "), _vm._m(9), _vm._v(" "), _vm._m(10)]), _vm._v(" "), _c("tr", {
-    staticClass: "border border-gray-300"
-  }, [_vm._m(11), _vm._v(" "), _vm._m(12), _vm._v(" "), _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, _vm._l(_vm.uomOptions, function (uom) {
-    return _c("select", {
-      key: uom.id,
-      staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
+    }, [_vm._v(_vm._s(uom.name))]);
+  }), 0)]), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _c("td", {
+    staticClass: "py-3 pl-1 pr-1"
+  }, [_c("select", {
+    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
+  }, _vm._l(_vm.currencyOptions, function (currency) {
+    return _c("option", {
+      key: currency.id,
       domProps: {
-        value: uom.id
+        value: currency.id
       }
-    }, [_c("option", [_vm._v(_vm._s(uom.name))])]);
-  }), 0), _vm._v(" "), _vm._m(13), _vm._v(" "), _vm._m(14), _vm._v(" "), _vm._m(15), _vm._v(" "), _vm._m(16), _vm._v(" "), _vm._m(17), _vm._v(" "), _c("td", {
+    }, [_vm._v(_vm._s(currency.name))]);
+  }), 0)]), _vm._v(" "), _c("td", {
     staticClass: "py-3 pl-3 pr-1"
   }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
     staticClass: "py-3 pl-3 pr-1"
   }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
     staticClass: "py-3 pl-3 pr-1"
-  }, [_vm._v("0.00")]), _vm._v(" "), _vm._m(18), _vm._v(" "), _vm._m(19)]), _vm._v(" "), _vm._m(20), _vm._v(" "), _vm._m(21)])])]);
+  }, [_vm._v("0.00")]), _vm._v(" "), _c("td", {
+    staticClass: "py-3 pl-3 pr-1"
+  }, [_c("select", {
+    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
+  }, [_c("option", {
+    attrs: {
+      disabled: "",
+      selected: "",
+      value: ""
+    }
+  }, [_vm._v("Select an option")]), _vm._v(" "), _vm._l(_vm.chargeToOptions, function (charge) {
+    return _c("option", {
+      key: charge.id,
+      domProps: {
+        value: charge.id
+      }
+    }, [_vm._v(_vm._s(charge.name))]);
+  })], 2)]), _vm._v(" "), _vm._m(8)]), _vm._v(" "), _vm._m(9), _vm._v(" "), _vm._m(10)])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -2280,7 +2294,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("Description")]), _vm._v(" "), _c("th", {
     staticClass: "py-2 px-3 font-normal text-left w-[8%]"
   }, [_vm._v("Qty")]), _vm._v(" "), _c("th", {
-    staticClass: "py-2 px-3 font-normal text-left w-[9%]"
+    staticClass: "py-2 px-3 font-normal text-left w-[10%]"
   }, [_vm._v("UOM")]), _vm._v(" "), _c("th", {
     staticClass: "py-2 px-3 font-normal text-left w-[10%]"
   }, [_vm._v("Unit Price")]), _vm._v(" "), _c("th", {
@@ -2298,7 +2312,7 @@ var staticRenderFns = [function () {
   }, [_vm._v("Sub Total")]), _vm._v(" "), _c("th", {
     staticClass: "py-2 px-3 font-normal text-left"
   }, [_vm._v("Total")]), _vm._v(" "), _c("th", {
-    staticClass: "py-2 px-3 font-normal text-left w-[18%]"
+    staticClass: "py-2 px-3 font-normal text-left w-[19%]"
   }, [_vm._v("Charge To")]), _vm._v(" "), _c("th", {
     staticClass: "py-2 px-3 font-normal text-left"
   })])]);
@@ -2370,148 +2384,6 @@ var staticRenderFns = [function () {
   }, [_c("i", {
     staticClass: "fa-solid fa-right-long text-center text-[#B8C0C6]"
   })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pr-1 pl-1"
-  }, [_c("select", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
-  }, [_c("option", {
-    attrs: {
-      value: "USD",
-      selected: ""
-    }
-  }, [_vm._v("USD")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "AED",
-      selected: ""
-    }
-  }, [_vm._v("USD")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("select", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
-  }, [_c("option", {
-    attrs: {
-      value: "",
-      selected: "",
-      disabled: ""
-    }
-  }, [_vm._v("Select an option")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-3"
-  }, [_c("button", {
-    staticClass: "h-11 w-11 bg-[#E5E5E5] rounded"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-minus"
-  })])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("input", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
-    attrs: {
-      type: "text",
-      placeholder: "Description"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("input", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
-    attrs: {
-      type: "text",
-      placeholder: "Qty"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("input", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
-    attrs: {
-      type: "text",
-      placeholder: "Unit Price"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("input", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
-    attrs: {
-      type: "number",
-      value: "0"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("input", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded",
-    attrs: {
-      type: "number",
-      value: "0"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "text-center"
-  }, [_c("i", {
-    staticClass: "fa-solid fa-right-long text-center text-[#B8C0C6]"
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pr-1 pl-1"
-  }, [_c("select", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
-  }, [_c("option", {
-    attrs: {
-      value: "USD",
-      selected: ""
-    }
-  }, [_vm._v("USD")]), _vm._v(" "), _c("option", {
-    attrs: {
-      value: "AED",
-      selected: ""
-    }
-  }, [_vm._v("AED")])])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("td", {
-    staticClass: "py-3 pl-3 pr-1"
-  }, [_c("select", {
-    staticClass: "w-full px-3 py-3 bg-gray-100 rounded"
-  }, [_c("option", {
-    attrs: {
-      value: "",
-      selected: "",
-      disabled: ""
-    }
-  }, [_vm._v("Select an option")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
