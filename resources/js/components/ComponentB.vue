@@ -31,8 +31,8 @@
                     <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Qty">
                 </td>
                 <td class="py-3 pl-3 pr-1">
-                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
-                    <option value="SHP" selected>SHP</option>
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded" v-for="uom in uomOptions" :key="uom.id" v-bind:value="uom.id">
+                        <option>{{ uom.name }}</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-1">
@@ -50,6 +50,7 @@
                 <td class="py-3 pr-1 pl-1">
                     <select class="w-full px-3 py-3 bg-gray-100 rounded">
                     <option value="USD" selected>USD</option>
+                    <option value="AED" selected>USD</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-1">0.00</td>
@@ -74,8 +75,8 @@
                     <input type="text" class="w-full px-3 py-3 bg-gray-100 rounded" placeholder="Qty">
                 </td>
                 <td class="py-3 pl-3 pr-1">
-                    <select class="w-full px-3 py-3 bg-gray-100 rounded">
-                    <option value="SHP" selected>SHP</option>
+                    <select class="w-full px-3 py-3 bg-gray-100 rounded" v-for="uom in uomOptions" :key="uom.id" v-bind:value="uom.id">
+                        <option>{{ uom.name }}</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-1">
@@ -93,6 +94,7 @@
                 <td class="py-3 pr-1 pl-1">
                     <select class="w-full px-3 py-3 bg-gray-100 rounded">
                     <option value="USD" selected>USD</option>
+                    <option value="AED" selected>AED</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-1">0.00</td>
@@ -100,7 +102,7 @@
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">
                     <select class="w-full px-3 py-3 bg-gray-100 rounded">
-                    <option class="text-[#C0C6CA]" value="" selected disabled>Select an option</option>
+                    <option value="" selected disabled>Select an option</option>
                     </select>
                 </td>
                 <td class="py-3 pl-3 pr-3">
@@ -135,11 +137,20 @@
 
 <script>
     import '@fortawesome/fontawesome-free/css/all.css'
-    import axios from 'axios';
-
+    import { mapState, mapActions } from 'vuex'
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+        // computed: {
+        //     ...mapState({
+        //         uomOptions: state => state.uomOptions,
+        //     }),
+        //     selectedUomOption: {
+        //         get() {
+        //             return this.$store.state.selectedUomOption
+        //         },
+        //         set(value) {
+        //             this.$store.commit('setSelectedUomOption', value)
+        //         }
+        //     }
+        // }
     }
 </script>

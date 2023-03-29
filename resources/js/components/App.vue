@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-white mx-auto">
+    <div class="container bg-white m-auto">
         <component-b></component-b>
         <div class="bg-[#FBFBFB] w-full p-5 flex justify-end">
             <button-component label="Cancel"></button-component>
