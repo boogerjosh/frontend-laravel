@@ -1,5 +1,5 @@
 <template>
-  <div class="container border-l border-r border-t border-gray-300">
+  <div class="container border-l border-r border-t border-gray-300 pb-2">
         <!-- <i class="fa-solid fa-truck"></i> -->
         <div class="flex items-center ml-2 mt-2">
           <div class="selectdiv w-[19%] mr-5">
@@ -19,51 +19,65 @@
           <div class="w-[64%] pr-1.5">
             <div class="flex align-center w-full mb-3">
               <div class="input-gruop w-[40%] mr-3">
-                <label class="text-sm">Assigned Vendor</label>
-                <div class="selectdiv w-full">
-                  <select class="rounded text-sm">
-                      <option>Amarit & Associates Logistics Co Ltd</option>
-                  </select>
-                </div>
+                <SelectInput
+                  textLabel="Assigned Vendor"
+                  defaultOption="Amarit & Associates Logistics Co Ltd"
+                  name="assignedVendor"
+                />
               </div>
               <div class="input-gruop w-[20%] mr-3">
-                <label class="text-sm">Attention Of</label>
-                <input type="text" class="text-sm w-full px-3 py-3 bg-gray-100 rounded" placeholder="Attention Of" value="John Smith">
+                <InputComponent 
+                  textLabel="Attention Of" 
+                  type="text" 
+                  inputClasses="text-sm w-full px-3 py-3 bg-gray-100 rounded" 
+                  name="attentionOf" 
+                  placeholder="Attention Of" 
+                  value="John Smith" 
+                />
               </div>
               <div class="input-gruop w-[20%] mr-3">
-                <label class="text-sm">Quatation No</label>
-                <input type="text" class="text-sm w-full px-3 py-3 bg-gray-100 rounded" placeholder="Quatation No" value="ABC-123-01">
+                <InputComponent 
+                  textLabel="Quatation No" 
+                  type="text" 
+                  inputClasses="text-sm w-full px-3 py-3 bg-gray-100 rounded" 
+                  name="quatationNo" 
+                  placeholder="Quatation No" 
+                  value="ABC-123-01" 
+                />
               </div>
               <div class="input-gruop w-[20%]">
-                <label class="text-sm">Invoice To</label>
-                <div class="selectdiv w-full">
-                  <select class="rounded text-sm">
-                      <option>MITO</option>
-                  </select>
-                </div>
+                <SelectInput
+                  textLabel="Invoice To"
+                  defaultOption="MITO"
+                  name="invoiceTo"
+                />
               </div>
             </div>
             <div class="input-gruop w-full">
-                <label class="text-sm">Vendor Address</label>
-                <input type="text" class="text-sm w-full px-3 py-3 bg-gray-100 rounded" placeholder="Vendor Address" value="Marubeni-Itochu">
-              </div>
+                <InputComponent 
+                  textLabel="Vendor Address" 
+                  type="text" 
+                  inputClasses="text-sm w-full px-3 py-3 bg-gray-100 rounded" 
+                  name="vendroAddress" 
+                  placeholder="Vendor Address" 
+                  value="Marubeni-Itochu" 
+                />
+            </div>
           </div>
           <div class="w-[18%] pl-1.5">
               <div class="input-gruop w-full mb-3">
-                <label class="text-sm">Customer - Contract</label>
-                <div class="selectdiv w-full">
-                  <select class="rounded text-sm">
-                      <option>ADNOC-ONSHORE</option>
-                  </select>
-                </div>
+                <SelectInput
+                  textLabel="Customer - Contract"
+                  defaultOption="ADNOC-ONSHORE"
+                  name="customerContract"
+                />
               </div>
               <div class="input-gruop w-full">
-                <label class="text-sm">Customer PO No.</label>
-                <div class="selectdiv w-full">
-                  <select class="rounded text-sm">
-                      <option>A123XXHTA0192</option>
-                  </select>
-                </div>
+                <SelectInput
+                  textLabel="Customer PO No."
+                  defaultOption="A123XXHTA0192"
+                  name="customerPO"
+                />
               </div>
           </div>
         </div>
@@ -72,9 +86,15 @@
 
 <script>
   import '@fortawesome/fontawesome-free/css/all.css';
+  import InputComponent from './InputComponent.vue';
+  import SelectInput from './SelectInput.vue';
 
   export default {
       name: 'ComponentA',
+      components: {
+        'InputComponent': InputComponent,
+        'SelectInput': SelectInput,
+      },
       mounted() {
             console.log('Component mounted.')
         }

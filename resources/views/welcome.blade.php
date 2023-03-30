@@ -25,7 +25,7 @@
         </style>
     </head>
     <body>
-        <div id="app" class="w-full h-screen py-10">
+        <div id="app" class="w-full h-screen py-10 bg-[#FBFBFB]">
             <main-component></main-component>
         </div>
         <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
