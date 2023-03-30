@@ -1,6 +1,6 @@
 <template>
     <div class="container mb-5 border-l border-r border-gray-300">
-        <div class="flex items-center mb-3 ml-2">
+        <div class="flex items-center mb-3 ml-2 cursor-pointer">
             <p class="mr-3 text-[#06C0C0]">Cost Detail</p>
             <i class="fa-solid fa-chevron-down text-[#06C0C0]"></i>
         </div>
@@ -45,7 +45,7 @@
                     />
                 </td>
                 <td class="py-3 pl-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                       :options="uomOptions"
                       label=""
                       width=""
@@ -86,7 +86,7 @@
                     <i class="fa-solid fa-right-long text-center text-[#B8C0C6]"></i>
                 </td>
                 <td class="py-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                       :options="currencyOptions"
                       label=""
                       width=""
@@ -97,7 +97,7 @@
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                         :options="chargeToOptions"
                         label=""
                         width=""
@@ -133,7 +133,7 @@
                     />
                 </td>
                 <td class="py-3 pl-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                       :options="uomOptions"
                       label=""
                       width=""
@@ -174,7 +174,7 @@
                     <i class="fa-solid fa-right-long text-center text-[#B8C0C6]"></i>
                 </td>
                 <td class="py-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                       :options="currencyOptions"
                       label=""
                       width=""
@@ -185,7 +185,7 @@
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">0.00</td>
                 <td class="py-3 pl-3 pr-1">
-                    <SelectInput
+                    <SelectInputComponent
                         :options="chargeToOptions"
                         label=""
                         width=""
@@ -194,9 +194,9 @@
                     />
                 </td>
                 <td class="py-3 pl-3 pr-3">
-                    <button class="h-11 w-11 bg-[#E5E5E5] rounded">
-                        <i class="fa-solid fa-minus"></i>
-                    </button>
+                    <button-component 
+                       label="minus"
+                    />
                 </td>
                 </tr>
                 <tr>
@@ -208,9 +208,9 @@
                     <td class="pl-3 pr-1 border-b-4 border-b-white  bg-[#F5F6F8] font-semibold">0.00</td>
                     <td></td>
                     <td class="py-3 pl-3 pr-3" rowspan="2">
-                        <button class="h-11 w-11 bg-[#00C0BF] rounded text-white">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
+                        <button-component 
+                          label="plus"
+                        />
                     </td>
                 </tr>
                 <tr>
@@ -229,13 +229,15 @@
     import '@fortawesome/fontawesome-free/css/all.css';
     import { mapGetters } from 'vuex';
     import InputComponent from './InputComponent.vue';
-    import SelectInput from './SelectInput.vue';
+    import SelectInputComponent from './SelectInputComponent.vue';
+    import ButtonComponent from './ButtonComponent.vue';
 
     export default {
         name: 'ComponentB',
         components: {
-        'InputComponent': InputComponent,
-        'SelectInput': SelectInput,
+            'InputComponent': InputComponent,
+            'SelectInputComponent': SelectInputComponent,
+            'button-component': ButtonComponent
         },
         computed: {
             ...mapGetters([

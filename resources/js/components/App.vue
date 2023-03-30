@@ -18,9 +18,9 @@
     import ButtonComponent from './ButtonComponent.vue';
     export default {
         components: {
-        'component-b': ComponentB,
-        'component-a': ComponentA,
-        'button-component': ButtonComponent
+            'component-b': ComponentB,
+            'component-a': ComponentA,
+            'button-component': ButtonComponent
         },
         mounted() {
             console.log('Component mounted.')
